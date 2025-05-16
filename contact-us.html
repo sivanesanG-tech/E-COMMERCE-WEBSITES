@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+    <style>
+      :root {
+        --primary-color: #0e4bf1;
+        --light-bg: #f4f4f9;
+        --lavender: #e6e6fa;
+        --transition: all 0.3s ease-in-out;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        font-family: "Poppins", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: var(--light-bg);
+        color: #333;
+      }
+
+      header {
+        background: var(--lavender);
+        color: var(--primary-color);
+        padding: 30px 0;
+        text-align: center;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      }
+
+      header h1 {
+        font-size: 2.8rem;
+        margin: 0;
+      }
+
+      .container {
+        max-width: 1000px;
+        margin: 40px auto;
+        padding: 0 20px;
+      }
+
+      section {
+        margin-bottom: 40px;
+      }
+
+      section h2 {
+        font-size: 1.8rem;
+        color: var(--primary-color);
+        margin-bottom: 15px;
+      }
+
+      section p {
+        font-size: 1rem;
+        margin-bottom: 8px;
+      }
+
+      form {
+        display: grid;
+        gap: 20px;
+        background: #fff;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.05);
+      }
+
+      .form-group {
+        position: relative;
+      }
+
+      .form-group input,
+      .form-group textarea {
+        width: 100%;
+        padding: 12px 14px;
+        border: 1px solid #ccc;
+        border-radius: 6px;
+        background: transparent;
+        font-size: 1rem;
+        transition: var(--transition);
+      }
+
+      .form-group label {
+        position: absolute;
+        top: 12px;
+        left: 14px;
+        font-size: 0.95rem;
+        color: #999;
+        pointer-events: none;
+        transition: var(--transition);
+        background: #fff;
+        padding: 0 4px;
+      }
+
+      .form-group input:focus,
+      .form-group textarea:focus {
+        border-color: var(--primary-color);
+        outline: none;
+      }
+
+      .form-group input:focus + label,
+      .form-group input:not(:placeholder-shown) + label,
+      .form-group textarea:focus + label,
+      .form-group textarea:not(:placeholder-shown) + label {
+        top: -10px;
+        left: 10px;
+        background: #fff;
+        color: var(--primary-color);
+        font-size: 0.75rem;
+      }
+
+      button {
+        padding: 12px;
+        background: var(--primary-color);
+        color: #fff;
+        border: none;
+        border-radius: 6px;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: var(--transition);
+      }
+
+      button:hover {
+        background: #083bc0;
+      }
+
+      footer {
+        background: var(--lavender);
+        color: #333;
+        text-align: center;
+        padding: 15px 0;
+        margin-top: 60px;
+        font-size: 0.95rem;
+      }
+
+      @media (max-width: 600px) {
+        header h1 {
+          font-size: 2rem;
+        }
+
+        form {
+          padding: 20px;
+        }
+      }
+    </style>
+    <script>
+      function sendReply(event) {
+        event.preventDefault();
+        const name = document.getElementById("name").value;
+        const question = document.getElementById("question").value;
+
+        alert(`Thank you, ${name}! Your question has been received:\n\n"${question}"\n\nWe’ll respond shortly.`);
+        document.getElementById("contact-form").reset();
+      }
+    </script>
+  </head>
+  <body>
+    <header>
+      <h1>Contact Us</h1>
+    </header>
+    <div class="container">
+      <section>
+        <h2>Contact Information</h2>
+        <p><strong>Name:</strong> Siva</p>
+        <p><strong>Phone:</strong> +91-6374609706</p>
+        <p><strong>Email:</strong> sivag2311@gmail.com</p>
+        <p><strong>Address:</strong> 153, Gangayamman Kovil Street, Thandlam, Thiruporur</p>
+      </section>
+
+      <section>
+        <h2>Ask a Question</h2>
+        <form id="contact-form" onsubmit="sendReply(event)">
+          <div class="form-group">
+            <input type="text" id="name" placeholder=" " required />
+            <label for="name">Your Name</label>
+          </div>
+          <div class="form-group">
+            <input type="email" id="email" placeholder=" " required />
+            <label for="email">Your Email</label>
+          </div>
+          <div class="form-group">
+            <textarea id="question" placeholder=" " rows="5" required></textarea>
+            <label for="question">Your Question</label>
+          </div>
+          <button type="submit">Submit</button>
+        </form>
+      </section>
+    </div>
+    <footer>
+      <p>&copy; 2025 Shopping Platform. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

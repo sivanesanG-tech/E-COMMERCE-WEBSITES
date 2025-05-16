@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Terms and Conditions</title>
+    <style>
+        :root {
+            --primary-color: #0e4bf1;
+            --bg-color: #f4f4f9;
+            --text-color: #333;
+            --white: #fff;
+        }
+
+        * {
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: "Poppins", sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        header {
+            background: var(--primary-color);
+            color: var(--white);
+            padding: 20px 0;
+            text-align: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: auto;
+            padding: 20px;
+        }
+
+        .accordion {
+            background-color: var(--white);
+            color: var(--text-color);
+            cursor: pointer;
+            padding: 15px 20px;
+            margin: 10px 0;
+            width: 100%;
+            border: none;
+            text-align: left;
+            outline: none;
+            font-size: 1.1rem;
+            transition: background 0.3s ease;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .accordion:hover {
+            background-color: #e9efff;
+        }
+
+        .accordion.active {
+            background-color: #d7e3ff;
+        }
+
+        .panel {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out;
+            background-color: #ffffff;
+            border-left: 4px solid var(--primary-color);
+            border-radius: 0 0 8px 8px;
+        }
+
+        .panel p {
+            margin: 15px 0;
+        }
+
+        footer {
+            background: var(--primary-color);
+            color: var(--white);
+            text-align: center;
+            padding: 15px 0;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2rem;
+            }
+
+            .accordion {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Terms and Conditions</h1>
+    </header>
+
+    <div class="container">
+        <button class="accordion">Introduction</button>
+        <div class="panel">
+            <p>Welcome to our shopping platform. By accessing or using our platform, you agree to comply with and be bound by the following terms and conditions.</p>
+        </div>
+
+        <button class="accordion">Use of the Platform</button>
+        <div class="panel">
+            <p>You agree to use the platform only for lawful purposes and in a way that does not infringe the rights of others or restrict their use of the platform.</p>
+        </div>
+
+        <button class="accordion">Account Responsibilities</button>
+        <div class="panel">
+            <p>You are responsible for maintaining the confidentiality of your account information and for all activities that occur under your account.</p>
+        </div>
+
+        <button class="accordion">Intellectual Property</button>
+        <div class="panel">
+            <p>All content on this platform, including text, graphics, logos, and images, is the property of the platform and is protected by copyright laws.</p>
+        </div>
+
+        <button class="accordion">Limitation of Liability</button>
+        <div class="panel">
+            <p>We are not liable for any direct, indirect, incidental, or consequential damages arising from your use of the platform.</p>
+        </div>
+
+        <button class="accordion">Changes to Terms</button>
+        <div class="panel">
+            <p>We reserve the right to update these terms and conditions at any time. Continued use of the platform constitutes acceptance of the updated terms.</p>
+        </div>
+
+        <button class="accordion">Contact Us</button>
+        <div class="panel">
+            <p>If you have any questions about these terms, please contact us.</p>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Shopping Platform. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const accordions = document.querySelectorAll(".accordion");
+
+        accordions.forEach(btn => {
+            btn.addEventListener("click", function () {
+                this.classList.toggle("active");
+                const panel = this.nextElementSibling;
+                if (panel.style.maxHeight) {
+                    panel.style.maxHeight = null;
+                } else {
+                    panel.style.maxHeight = panel.scrollHeight + "px";
+                }
+            });
+        });
+    </script>
+</body>
+</html>
